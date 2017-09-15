@@ -1,6 +1,21 @@
-# react-scripts
+# react-scripts-purescript
 
-This package includes scripts and configuration used by [Create React App](https://github.com/facebookincubator/create-react-app).<br>
+This package includes scripts and configuration used by [Create React App](https://github.com/facebookincubator/create-react-app) with purescript support.<br>
+
+## Install
+
+This package relies on [purescript-psa](https://github.com/natefaubion/purescript-psa)
+
+```
+yarn global add purescript-psa
+```
+
+```
+npm install -g purescript-psa
+```
+
+## CRA documentation
+
 Please refer to its documentation:
 
 * [Getting Started](https://github.com/facebookincubator/create-react-app/blob/master/README.md#getting-started) – How to create a new app.
