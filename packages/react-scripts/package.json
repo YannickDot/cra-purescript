@@ -1,6 +1,6 @@
 {
   "name": "react-scripts-purescript",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Configuration and scripts for Create React App.",
   "repository": "YannickDot/cra-purescript",
   "license": "BSD-3-Clause",

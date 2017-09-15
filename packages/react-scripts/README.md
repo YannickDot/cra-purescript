@@ -14,6 +14,12 @@ yarn global add purescript-psa
 npm install -g purescript-psa
 ```
 
+and then
+
+```
+create-react-app my-app --scripts-version react-scripts-purescript
+```
+
 ## CRA documentation
 
 Please refer to its documentation:
