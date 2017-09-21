@@ -32,4 +32,6 @@ create-react-app my-purescript-app --scripts-version react-scripts-purescript
 
 Now you have a shiny PureScript app using React!
 
+A PureScript react component is available in `src/Box.purs`
+
 If you want to learn more about the PureScript language, your next stop should be [PureScript by Example](https://leanpub.com/purescript/read). This book is a goldmine!
