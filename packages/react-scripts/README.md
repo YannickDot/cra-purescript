@@ -1,8 +1,18 @@
 # react-scripts-purescript
 
-This package includes scripts and configuration used by [Create React App](https://github.com/facebookincubator/create-react-app) with purescript support.<br>
+This package includes scripts and configuration used by [Create React App](https://github.com/facebookincubator/create-react-app) with PureScript support.<br>
 
 ## Install
+
+You'll need to setup the [PureScript Development Environment](https://github.com/purescript/documentation/blob/master/guides/Getting-Started.md)
+
+```
+yarn global add purescript pulp bower
+```
+
+```
+npm install -g purescript pulp bower
+```
 
 This package relies on [purescript-psa](https://github.com/natefaubion/purescript-psa)
 
@@ -14,15 +24,12 @@ yarn global add purescript-psa
 npm install -g purescript-psa
 ```
 
-and then
+and then **PROFIT**
 
 ```
-create-react-app my-app --scripts-version react-scripts-purescript
+create-react-app my-purescript-app --scripts-version react-scripts-purescript
 ```
 
-## CRA documentation
+Now you have a shiny PureScript app using React!
 
-Please refer to its documentation:
-
-* [Getting Started](https://github.com/facebookincubator/create-react-app/blob/master/README.md#getting-started) – How to create a new app.
-* [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md) – How to develop apps bootstrapped with Create React App.
+If you want to learn more about the PureScript language, your next stop should be [PureScript by Example](https://leanpub.com/purescript/read). This book is a goldmine!
