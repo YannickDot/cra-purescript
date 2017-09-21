@@ -15,13 +15,15 @@ initialState = { name: "World" }
 -- Props
 type BoxStyles =
     { border :: String,
-      padding :: String
+      padding :: String,
+      display :: String
     }
 
 boxStyles :: BoxStyles
 boxStyles =
   { border: "2px solid red",
-    padding: "0 20px"
+    padding: "20px",
+    display: "inline-block"
   }
 
 -- Component
