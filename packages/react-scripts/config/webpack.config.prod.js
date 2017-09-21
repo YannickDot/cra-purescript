@@ -250,6 +250,7 @@ module.exports = {
               ],
               bundle: false,
               psc: 'psa',
+              watch: false,
               pscIde: false,
               warnings: false
             }
@@ -367,7 +368,12 @@ module.exports = {
     // solution that requires the user to opt into importing specific locales.
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    function PureScriptErrorsPlugin() {
+      this.plugin('done', function(stats) {
+        process.stderr.write(stats.toString('errors-only'))
+      })
+    }
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
