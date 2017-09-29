@@ -199,7 +199,7 @@ In addition to [ES6](https://github.com/lukehoban/es6features) syntax features, 
 * [Async/await](https://github.com/tc39/ecmascript-asyncawait) (ES2017).
 * [Object Rest/Spread Properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (stage 3 proposal).
 * [Dynamic import()](https://github.com/tc39/proposal-dynamic-import) (stage 3 proposal)
-* [Class Fields and Static Properties](https://github.com/tc39/proposal-class-public-fields) (stage 2 proposal).
+* [Class Fields and Static Properties](https://github.com/tc39/proposal-class-public-fields) (part of stage 3 proposal).
 * [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) and [Flow](https://flowtype.org/) syntax.
 
 Learn more about [different proposal stages](https://babeljs.io/docs/plugins/#presets-stage-x-experimental-presets-).
@@ -983,7 +983,7 @@ To tell the development server to proxy any unknown requests to your API server 
   "proxy": "http://localhost:4000",
 ```
 
-This way, when you `fetch('/api/todos')` in development, the development server will recognize that it’s not a static asset, and will proxy your request to `http://localhost:4000/api/todos` as a fallback. The development server will only attempt to send requests without a `text/html` accept header to the proxy.
+This way, when you `fetch('/api/todos')` in development, the development server will recognize that it’s not a static asset, and will proxy your request to `http://localhost:4000/api/todos` as a fallback. The development server will **only** attempt to send requests without `text/html` in its `Accept` header to the proxy.
 
 Conveniently, this avoids [CORS issues](http://stackoverflow.com/questions/21854516/understanding-ajax-cors-and-security-considerations) and error messages like this in development:
 
@@ -1049,7 +1049,7 @@ You may also specify any configuration value [`http-proxy-middleware`](https://g
 All requests matching this path will be proxies, no exceptions. This includes requests for `text/html`, which the standard `proxy` option does not proxy.
 
 If you need to specify multiple proxies, you may do so by specifying additional entries.
-You may also narrow down matches using `*` and/or `**`, to match the path exactly or any subpath.
+Matches are regular expressions, so that you can use a regexp to match multiple paths.
 ```js
 {
   // ...
@@ -1070,12 +1070,12 @@ You may also narrow down matches using `*` and/or `**`, to match the path exactl
       // ...
     },
     // Matches /bar/abc.html but not /bar/sub/def.html
-    "/bar/*.html": {
+    "/bar/[^/]*[.]html": {
       "target": "<url_3>",
       // ...
     },
     // Matches /baz/abc.html and /baz/sub/def.html
-    "/baz/**/*.html": {
+    "/baz/.*/.*[.]html": {
       "target": "<url_4>"
       // ...
     }
