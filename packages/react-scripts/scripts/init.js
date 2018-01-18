@@ -33,7 +33,10 @@ module.exports = function(
   const useYarn = fs.existsSync(path.join(appPath, 'yarn.lock'))
 
   // Copy over some of the devDependencies
-  appPackage.dependencies = appPackage.dependencies || {}
+  appPackage.dependencies =
+    Object.assign({}, appPackage.dependencies, {
+      'create-react-class': '^15.6.2'
+    }) || {}
 
   // Setup the script rules
   appPackage.scripts = {
